@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Widget Test</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Chat Widget Integration Test</h1>
+        <p>This page tests the Chat Widget bundle served from this application.</p>
+        <p><strong>Status:</strong> <span id="status">Loading Script...</span></p>
+
+        <script>
+            // Update status when script loads
+            window.onload = function () {
+                if (window.ChatWidget) {
+                    document.getElementById('status').innerText = 'Script Loaded. Initializing...';
+                    document.getElementById('status').style.color = 'green';
+
+                    // Debug Info
+                    const sessionId = localStorage.getItem('chat_session_id');
+                    const sessionObj = localStorage.getItem('chat_session');
+                    console.log('Session ID:', sessionId);
+                    console.log('Session Obj:', sessionObj);
+
+                    const debugDiv = document.createElement('div');
+                    debugDiv.innerHTML = `<p><strong>Socket Session ID:</strong> ${sessionId || 'None'}</p>
+                                          <p><strong>Widget Session:</strong> ${sessionObj || 'None'}</p>`;
+                    document.querySelector('.container').appendChild(debugDiv);
+
+                } else {
+                    document.getElementById('status').innerText = 'Script Failed to Load';
+                    document.getElementById('status').style.color = 'red';
+                }
+            };
+
+            function clearSession() {
+                localStorage.removeItem('chat_session_id');
+                localStorage.removeItem('chat_session'); // Clear Widget session
+                localStorage.removeItem('chat_last_time');
+                alert('Session Cleared! Reloading...');
+                location.reload();
+            }
+        </script>
+
+        <button onclick="clearSession()" style="margin-bottom: 20px; padding: 10px; cursor: pointer;">
+            Reset / Clear
+            Session
+        </button>
+
+
+    </div>
+    <!-- Bot360 Chat Widget -->
+    <!-- <script src="/widget-debug.js"></script> -->
+    <script src="/widget/bundle.js"></script>
+    <script>
+        if (window.ChatWidget) {
+            ChatWidget.init({
+                apiUrl: 'http://localhost:5002',
+                organizationId: 'ead9ed9828c64c14a7e5399704a6808b',
+                authToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjZTI2Y2Q3ZS0wZDBjLTRmOTUtYTY4Zi02MzRiOGU3MjY1MDciLCJvcmdhbml6YXRpb25JZCI6ImVhZDllZDk4MjhjNjRjMTRhN2U1Mzk5NzA0YTY4MDhiIiwianRpIjoiNjAxOWVmNjktOWIzZS00YjBkLWFkNmEtYmJkMjBmYTg0M2EyIiwibmJmIjoxNzcwNDYxMDY1LCJleHAiOjQ5MjYxMzQ2NjUsImlhdCI6MTc3MDQ2MTA2NSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3QifQ.BC2iltcmym612dWJfNLu9LIDzYCpl96GGBZh8IrtOVg'
+            });
+        }
+    </script>
+</body>
+
+</html>
