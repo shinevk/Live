@@ -1,1 +1,0 @@
-import{j as t}from"./index-BYmi2GkL.js";import{P as r}from"./PageBreadcrumb-DNNXGai4.js";import"./PageMetaData-CcezInVy.js";import"./Row-BwLfFdx1.js";const s=()=>t.jsx(r,{title:"Starter",subName:"Pages"});export{s as default};
