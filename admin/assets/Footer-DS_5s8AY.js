@@ -1,0 +1,1 @@
+import{j as e}from"./index-CGeDB8zz.js";const s=()=>e.jsxs("footer",{className:"footer text-center text-sm-start",children:["© ",new Date().getFullYear()," ProjectX ",e.jsxs("span",{className:"text-muted d-none d-sm-inline-block float-end",children:["Crafted with ",e.jsx("i",{className:"mdi mdi-heart text-danger"})," by ProjectX"]})]});export{s as default};
