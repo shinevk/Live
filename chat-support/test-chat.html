@@ -29,17 +29,26 @@
 <body>
     <div class="container">
         <h1>Chat Widget Integration Test</h1>
+        <p>This page tests the Chat Widget bundle served from this application.</p>
+        <p><strong>Status:</strong> <span id="status">Loading Script...</span></p>
+
+
+
+
+
 
 
     </div>
     <!-- Bot360 Chat Widget -->
-    <script src="https://apigateway.bot360.in/widget/bundle.js"></script>
+    <!-- <script src="/widget-debug.js"></script> -->
+    <script src="widget/bundle.js"></script>
     <script>
         if (window.ChatWidget) {
             ChatWidget.init({
                 apiUrl: 'https://apigateway.bot360.in',
-                organizationId: '0cab1b11fcaa4b9fb61415d2f7f6a430',
-                authToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YzExODg5ZS0zZjVmLTRkYjItYTE1Yy1hMjJkNmZlZWZmZTAiLCJvcmdhbml6YXRpb25JZCI6IjBjYWIxYjExZmNhYTRiOWZiNjE0MTVkMmY3ZjZhNDMwIiwianRpIjoiY2YwZWVlMjQtMTFkYS00ZTYxLWJmZGEtMzYzMTgyNTEwY2JjIiwibmJmIjoxNzcxNzcxNzA5LCJleHAiOjQ5Mjc0NDUzMDksImlhdCI6MTc3MTc3MTcwOSwiaXNzIjoiUHJvamVjdFguSWRlbnRpdHlTZXJ2aWNlIiwiYXVkIjoiUHJvamVjdFguQXBwcyJ9.VxMOu0XurCrNjAzIKig9c4Z8_pIO3tXg2viVPMK4qSs'
+                organizationId: 'ead9ed9828c64c14a7e5399704a6808b',
+                // Using the same test token for now, user can change if needed
+                authToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjZTI2Y2Q3ZS0wZDBjLTRmOTUtYTY4Zi02MzRiOGU3MjY1MDciLCJvcmdhbml6YXRpb25JZCI6ImVhZDllZDk4MjhjNjRjMTRhN2U1Mzk5NzA0YTY4MDhiIiwianRpIjoiNjAxOWVmNjktOWIzZS00YjBkLWFkNmEtYmJkMjBmYTg0M2EyIiwibmJmIjoxNzcwNDYxMDY1LCJleHAiOjQ5MjYxMzQ2NjUsImlhdCI6MTc3MDQ2MTA2NSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3QifQ.BC2iltcmym612dWJfNLu9LIDzYCpl96GGBZh8IrtOVg'
             });
         }
     </script>
