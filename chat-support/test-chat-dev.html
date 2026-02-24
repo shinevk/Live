@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Widget Test</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Chat Widget Integration Test</h1>
+        <p>This page tests the Chat Widget bundle served from this application.</p>
+        <p><strong>Status:</strong> <span id="status">Loading Script...</span></p>
+
+
+
+
+
+
+
+    </div>
+
+<!-- Bot360 Chat Widget -->
+<script src="http://localhost:8888/widget/bundle.js"></script>
+<script>
+  if (window.ChatWidget) {
+    ChatWidget.init({
+      apiUrl: 'http://localhost:8888',
+      organizationId: '0d340cfdf152410ea638af454c57c61f',
+      authToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3M2M0MjNlMC00NWY2LTQwYTQtYjBiOS1iYjljYzA5NjYwODAiLCJvcmdhbml6YXRpb25JZCI6IjBkMzQwY2ZkZjE1MjQxMGVhNjM4YWY0NTRjNTdjNjFmIiwianRpIjoiZGRhYjIzNjEtMTZlMC00OGM0LWJkYzgtMTEzZmMzM2I3MmM5IiwibmJmIjoxNzcxODcxNjY2LCJleHAiOjQ5Mjc1NDUyNjYsImlhdCI6MTc3MTg3MTY2NiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3QifQ.meifWE1t_M2TojN-k1-4kT98lkH5w3VvbMKXhCkoiME'
+    });
+  }
+</script>
+</body>
+
+</html>
