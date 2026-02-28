@@ -1,0 +1,1 @@
+import{r as n,j as p,d as c,o as s}from"./index-CwmvLTAY.js";const i={"aria-label":s.string,onClick:s.func,variant:s.oneOf(["white"])},a=n.forwardRef(({className:e,variant:o,"aria-label":t="Close",...r},l)=>p.jsx("button",{ref:l,type:"button",className:c("btn-close",o&&`btn-close-${o}`,e),"aria-label":t,...r}));a.displayName="CloseButton";a.propTypes=i;export{a as C};
